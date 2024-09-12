@@ -51,4 +51,10 @@ public class FarmsController {
         farmService.deleteFarmById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/by-user")
+    public ResponseEntity<List<Farm>> getFarmsByName(@RequestParam Integer user) {
+        List<Farm> farms = farmService.getFarmByIdUsuario(user);
+        return ResponseEntity.ok(farms);
+    }
 }

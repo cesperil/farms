@@ -38,4 +38,9 @@ public class FarmsService {
     public void deleteFarmById(Integer id) {
         farmRepository.deleteById(id);
     }
+
+    // Read by ID
+    public List<Farm>  getFarmByIdUsuario(Integer id) {
+        return farmRepository.findByFkIdeUsuario(id);
+    }
 }

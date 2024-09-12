@@ -48,6 +48,11 @@ public class Farm {
     @Column(name = "nombre", length = 50)
     private String nombre;
 
+
+
+    @Column(name = "extension_ha")
+    private String extensionHa;
+
     // Getters y Setters
 
     public Integer getId() {
@@ -159,6 +164,14 @@ public class Farm {
     @PreUpdate
     public void preUpdate() {
         this.fechaUltModificacion = LocalDateTime.now();
+    }
+
+    public String getExtensionHa() {
+        return extensionHa;
+    }
+
+    public void setExtensionHa(String extensionHa) {
+        this.extensionHa = extensionHa;
     }
 
 }

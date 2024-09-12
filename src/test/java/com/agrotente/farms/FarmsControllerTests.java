@@ -42,6 +42,7 @@ public class FarmsControllerTests {
         farm = new Farm();
         farm.setId(Math.toIntExact(3L));
         farm.setNombre("Parcela 1");
+        farm.setFkIdeUsuario(1);
         // Configurar otros campos de la parcela
     }
 
@@ -54,6 +55,16 @@ public class FarmsControllerTests {
                 .andExpect(jsonPath("$[0].id").value(farm.getId()))
                 .andExpect(jsonPath("$[0].nombre").value(farm.getNombre()));
     }
+
+    @Test
+    void testGetFarmsByIdUsuario() throws Exception {
+        Mockito.when(farmsService.getAllFarms()).thenReturn(Arrays.asList(farm));
+
+        mockMvc.perform(get("/api/farms/by-user"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].fkideusuario").value(farm.getFkIdeUsuario()));
+    }
+
 /*
     @Test
     void testGetById() throws Exception {
