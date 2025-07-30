@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/harvests")
-@CrossOrigin(origins = "http://localhost:65107")
+@CrossOrigin(origins = "http://localhost:4200")
 public class HarvestController {
 
     @Autowired

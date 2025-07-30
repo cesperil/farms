@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/types-sensors")
-@CrossOrigin(origins = "http://localhost:65107")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TypesSensorController {
 
     @Autowired
